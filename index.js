@@ -13,8 +13,8 @@ const initial = eliza.getInitial();
 *
 ************************************************************/
 const chatty = {
-  min: 2,
-  max: 7
+  min: 3,
+  max: 10
 }
 var counter = 0
 var current_max = Math.random() * (chatty.max - chatty.min) + chatty.min;
