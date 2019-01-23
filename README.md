@@ -70,6 +70,8 @@ Feel free to donate to keep the bot going:
 
 ![response3](response3.png)
 
+![response4](response4.png)
+
 
 # Install
 

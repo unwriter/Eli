@@ -33,6 +33,18 @@ const query = {
     "f": "[.[] | { m: .out[0].s2, t: .timestamp, h: .tx.h }]"
   }
 }
+const send = function(line) {
+  const _datapay = {
+    data: ["", line]
+  }
+  // Submit Datapay payload to local Bitpipe API Endpoiont
+  axios.post("http://localhost:8082/bitpipe", _datapay)
+  .then(function(res) {
+    console.log(res.data)
+  }).catch(function(e) {
+    console.log("Error", e)
+  })
+}
 const listen = function() {
   let b64 = Buffer.from(JSON.stringify(query)).toString("base64")
   bitsocket = new EventSource('https://chronos.bitdb.network/s/1P6o45vqLdo6X8HRCZk8XuDsniURmXqiXo/'+b64)
@@ -58,18 +70,6 @@ const listen = function() {
       }
     }
   }
-}
-const send = function(line) {
-  const _datapay = {
-    data: ["", line]
-  }
-  // Submit Datapay payload to local Bitpipe API Endpoiont
-  axios.post("http://localhost:8082/bitpipe", _datapay)
-  .then(function(res) {
-    console.log(res.data)
-  }).catch(function(e) {
-    console.log("Error", e)
-  })
 }
 bitpipe.start({
   port: 8082,
