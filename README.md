@@ -90,3 +90,12 @@ Start the Eli (a Bitpipe node):
 ```
 npm start
 ```
+
+# Build Your Own
+
+Eli is a demo to show how easy it is to build your own Bitcoin bot that:
+
+1. Listens to a specific bitcoin transaction pattern
+2. and Trigger another transaction
+
+The main code is `index.js` (The `elizabot.js` is just the bot logic and you can ignore if you're building your own bot logic)

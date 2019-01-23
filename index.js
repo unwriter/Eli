@@ -9,12 +9,12 @@ const initial = eliza.getInitial();
 *   "chatty": chatty factor. The lower the chattier
 *
 *   by default, Eli will respond once for every N incoming
-*   messages (where N is a random value between 3 and 7)
+*   messages (where N is a random value between 3 and 20)
 *
 ************************************************************/
 const chatty = {
   min: 3,
-  max: 10
+  max: 20
 }
 var counter = 0
 var current_max = Math.random() * (chatty.max - chatty.min) + chatty.min;
